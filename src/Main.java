@@ -5,6 +5,15 @@ public class Main extends PApplet {
 
     private float theta2;
 
+    private double x = 0.0;
+    private double y = 0.0;
+
+    public static Main app;
+
+    public Main(){
+        super();
+        app = this;
+    }
 
     public static void main(String[] args) {
         PApplet.main("Main");
@@ -31,6 +40,12 @@ public class Main extends PApplet {
         stroke(0);
         tree2(80);
         strokeWeight(2);
+
+        translate(width / 2, height / 2);
+        for (int i = 0; i < 100; i++) {
+            drawPoint();
+            barnsley_fern();
+        }
     }
 
     public void tree1(float len) { //tree number 1: basic tree on top left console
@@ -68,10 +83,20 @@ public class Main extends PApplet {
                 popMatrix();
             }
         }
+    }
 
 
+
+    public void drawPoint(){
+        stroke(255);
+        strokeWeight(8);
+        float px = map((float) x, -4, 4, 0, width);
+        float py = map((float) y, 0, 8, height, 0);
+        point(px, py);
+        ellipse(100, 100, 100, 100);
     }
 }
+
 
 
 //add different features like lightening and mountains 
