@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5aba94c1-f67e-4ebb-85ff-b7519ef327ce" name="Changes" comment="Shifted the tree to desired location on the canvas. Made a second tree that has a random angle and length to vary the shape of the tree from the first tree. Also made a function that calls a random number of branches as well. Tree2 works as intended in the middle of the console, next to the initial tree.">
-      <change afterPath="$PROJECT_DIR$/src/Barnsley_Fern.java" afterDir="false" />
+    <list default="true" id="5aba94c1-f67e-4ebb-85ff-b7519ef327ce" name="Changes" comment="Used matrix algebra and indivual affine transformations (each with a probability) to draw Barnsley fern. The stems and leaves were drawn with recursive and the transformations were based on matrix algebra. Doesn't work properly and am thinking about taking it out ofe code.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Barnsley_Fern.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,13 +66,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684368341637</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Used matrix algebra and indivual affine transformations (each with a probability) to draw Barnsley fern. The stems and leaves were drawn with recursive and the transformations were based on matrix algebra. Doesn't work properly and am thinking about taking it out of the code.">
+      <created>1684428122222</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1684428122222</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="hi" />
     <MESSAGE value="Shifted the tree to desired location on the canvas. Made a second tree that has a random angle and length to vary the shape of the tree from the first tree. Also made a function that calls a random number of branches as well. Tree2 works as intended in the middle of the console, next to the initial tree." />
-    <option name="LAST_COMMIT_MESSAGE" value="Shifted the tree to desired location on the canvas. Made a second tree that has a random angle and length to vary the shape of the tree from the first tree. Also made a function that calls a random number of branches as well. Tree2 works as intended in the middle of the console, next to the initial tree." />
+    <MESSAGE value="Used matrix algebra and indivual affine transformations (each with a probability) to draw Barnsley fern. The stems and leaves were drawn with recursive and the transformations were based on matrix algebra. Doesn't work properly and am thinking about taking it out of the code." />
+    <option name="LAST_COMMIT_MESSAGE" value="Used matrix algebra and indivual affine transformations (each with a probability) to draw Barnsley fern. The stems and leaves were drawn with recursive and the transformations were based on matrix algebra. Doesn't work properly and am thinking about taking it out of the code." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/FinalProject$Main.ic" NAME="Main Coverage Results" MODIFIED="1684427152116" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

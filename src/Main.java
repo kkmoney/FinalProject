@@ -1,13 +1,16 @@
 import processing.core.PApplet;
 public class Main extends PApplet {
-
-    private float theta;
-
-    private float theta2;
-
+  private float theta;
     private double x = 0.0;
     private double y = 0.0;
 
+    private String timestamp; //variable for naming saved frames
+    private float theta2;
+    private float counter = 0;
+    private float noPetals = 4; //number of petals the fractal flower has
+    private float reductionFactor = 0.66F; //by what factor should the next branch get reduced by? 0.5 = each branch is half the size of the previous one.
+    private float cutOff = 7; //what is the minimum branch length?  the fractal will continue to be drawn until this minimum size is reached.
+    private float branchFactor = 2 ; //number of branches at each level
     public static Main app;
 
     public Main(){
@@ -29,32 +32,65 @@ public class Main extends PApplet {
     public void draw() {
         background(255);
         theta = map(mouseX, 0, width, 0, PI / 2);
-        theta2 = map(mouseX, 0, width, 0, PI / 2);
 
-        translate(width / 4, height / 3);
-        stroke(0);
-        tree1(60);
-        strokeWeight(2);
+        translate(width / 2, height / 1);
+        strokeWeight(4);
+        keyPressed();
 
-        translate(width / 3, height / 8);
-        stroke(0);
-        tree2(80);
-        strokeWeight(2);
-
-        translate(width / 2, height / 2);
-        for (int i = 0; i < 100; i++) {
-            drawPoint();
-            barnsley_fern();
+        counter += 1;
+        theta2 = radians(counter);
+        stroke(0,255,0);
+        translate(width/400, height/100);
+        for(int i = 0; i < noPetals; i++) {
+            drawPetal();
+            rotate((float) (PI / (noPetals/2.0)));
         }
     }
 
-    public void tree1(float len) { //tree number 1: basic tree on top left console
+    public void branch(float h) {
+        h *= reductionFactor;
+        if (h > cutOff) {
+            for(int i = 0; i < branchFactor; i++) {
+                pushMatrix();
+                rotate(branchFactor*theta2/2);
+                line(0, 0, 0, -h);
+                translate(0, -h);
+                branch(h);
+                popMatrix();
+
+                pushMatrix();
+                rotate(-branchFactor*theta2/2);
+                line(0, 0, 0, -h);
+                translate(0, -h);
+                branch(h);
+                popMatrix();
+
+                if (branchFactor % 2 != 0) {
+                    pushMatrix();
+                    line(0, 0, 0, -h);
+                    translate(0, -h);
+                    branch(h);
+                    popMatrix();
+                }
+            }
+        }
+    }
+
+    public  void drawPetal() {
+        line(0, 0, 0, -height/8);
+        translate(0, -height/8);
+        branch(height/8);
+        translate(0, height/8);
+    }
+
+        public void tree1(float len) { //tree number 1
         line(0, 0, 0, -len);
         translate(0, -len);
 
         len *= 0.66;
 
-        if (len > 2) {
+        if (len > 1) {
+            stroke(0,0,255);
             pushMatrix();
             rotate(theta);
             tree1(len);
@@ -67,40 +103,15 @@ public class Main extends PApplet {
         }
     }
 
-    public void tree2(float len2) { //tree number 2: tree with random angle and length on top middle console and also random branches
-        float theta2 = random(0, PI / 2);
-        line(0, 0, 0, -len2);
-        translate(0, -len2);
-        len2 *= 0.66;
-
-        if (len2 > 2) {
-            int n = (int) (Math.random() * 4) + 1;
-            for (int i = 0; i < n; i++) {
-                float theta3 = random(-PI / 2, PI / 2);
-                pushMatrix();
-                rotate(theta3);
-                tree2(len2);
-                popMatrix();
-            }
+    public void keyPressed(){
+        if(key == 'k'){
+            tree1(150);
         }
     }
 
+    //with each key pressed, a fractal snowflakes (koch) appears
+    //another key pressed makes the snowflake spin
+    //with another key pressed, make a square fractal appear
+    //another key pressed makes the square spin
 
-
-    public void drawPoint(){
-        stroke(255);
-        strokeWeight(8);
-        float px = map((float) x, -4, 4, 0, width);
-        float py = map((float) y, 0, 8, height, 0);
-        point(px, py);
-        ellipse(100, 100, 100, 100);
-    }
 }
-
-
-
-//add different features like lightening and mountains 
-
-    //start w fractal trees + flowers
-    //if time, add L-systems
-
