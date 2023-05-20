@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5aba94c1-f67e-4ebb-85ff-b7519ef327ce" name="Changes" comment="First I made a drawing made out of four different recursive circles. Second, I made a rainbow tunnel drawing that changes based on the mouse's location (doesn’t work yet). Finally, I made a rain particle animation that makes rain fall from the sky (does not work yet). I made all three methods inside keypressed too.">
+    <list default="true" id="5aba94c1-f67e-4ebb-85ff-b7519ef327ce" name="Changes" comment=" I made a new animated heart drawing based on geometry that will paint itself. I then cleaned up all of my keypress functions so that each different key pressed corresponds to a different painting. I also made an instructions page on which keys to press.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kochSnowflake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kochSnowflake.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +92,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684546258291</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary=" I made a new animated heart drawing based on geometry that will paint itself. I then cleaned up all of my keypress functions so that each different key pressed corresponds to a different painting. I also made an instructions page on which keys to press.">
+      <created>1684560258775</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1684560258775</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -104,7 +109,8 @@
     <MESSAGE value="I took off one of the fractal trees (tree number 2) and made tree number 1 the main tree. I made a “flower” fractal design that’s animated and changes shapes simultaneously. Then I made a keypressed function so when a key ‘k’ is pressed, the tree number 1 appears and both trees are animated." />
     <MESSAGE value="I first cleaned up the code with keypressed function and the flower fractal design. Then, I made a new class with the Koch snowflake from the Nature of Code book. I have written all the code but it doesn’t run correctly and I’m not sure how to call it in my main method." />
     <MESSAGE value="First I made a drawing made out of four different recursive circles. Second, I made a rainbow tunnel drawing that changes based on the mouse's location (doesn’t work yet). Finally, I made a rain particle animation that makes rain fall from the sky (does not work yet). I made all three methods inside keypressed too." />
-    <option name="LAST_COMMIT_MESSAGE" value="First I made a drawing made out of four different recursive circles. Second, I made a rainbow tunnel drawing that changes based on the mouse's location (doesn’t work yet). Finally, I made a rain particle animation that makes rain fall from the sky (does not work yet). I made all three methods inside keypressed too." />
+    <MESSAGE value=" I made a new animated heart drawing based on geometry that will paint itself. I then cleaned up all of my keypress functions so that each different key pressed corresponds to a different painting. I also made an instructions page on which keys to press." />
+    <option name="LAST_COMMIT_MESSAGE" value=" I made a new animated heart drawing based on geometry that will paint itself. I then cleaned up all of my keypress functions so that each different key pressed corresponds to a different painting. I also made an instructions page on which keys to press." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
