@@ -3,7 +3,6 @@ import processing.core.PVector;
 import java.util.ArrayList;
 
 public class kochSnowflake {
-
     private PVector start;
     private PVector end;
 
@@ -13,6 +12,7 @@ public class kochSnowflake {
         start = a.get();
         end = b.get();
     }
+
 
     public void display() {
         Main.app.stroke(0);
