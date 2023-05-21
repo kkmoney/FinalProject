@@ -48,7 +48,7 @@ public class Main extends PApplet {
     public void drawFlower() {
         counter += 1;
         theta2 = radians(counter);
-        stroke(0, 255, 0);
+        stroke(102, 0, 153);
         translate((float) (width / 2), (float) (height / 2));
         for (int i = 0; i < petals; i++) {
             drawPetal();
@@ -99,12 +99,13 @@ public class Main extends PApplet {
         len *= 0.66;
 
         if (len > 1) {
-            stroke(0, 0, 255);
+            stroke(102, 255, 102);
             pushMatrix();
             rotate(theta);
             tree1(len);
             popMatrix();
 
+            stroke(255, 102, 102);
             pushMatrix();
             rotate(-theta);
             tree1(len);
@@ -165,6 +166,32 @@ public class Main extends PApplet {
         }
     }
 
+    public void circle_again(float x, float y, float radius) {
+        ellipse(x, y, radius, radius);
+        if(radius > 16) {
+            radius *= 0.75f;
+            circle_again((x + radius/2), y, radius/2);
+            circle_again((x - radius/2), y, radius/2);
+            circle_again(x, y + radius/2, radius/2);
+            circle_again(x, y - radius/2, radius/2);
+            circle_again(x, y , radius/2);
+            circle_again(x, y, radius/2);
+        }
+    }
+
+    public void circle_again2(float x, float y, float radius) {
+        ellipse(x, y, radius, radius);
+        if(radius > 16) {
+            radius *= 0.75f;
+            circle_again2((x + radius/2), y, radius/2);
+            circle_again2((x - radius/2), y, radius/2);
+            circle_again2(x, y + radius/2, radius/2);
+            circle_again2(x, y - radius/2, radius/2);
+            circle_again2(x, y , radius/2);
+            circle_again2(x, y, radius/2);
+        }
+    }
+
 
     public void heart(){
         background(0);
@@ -172,6 +199,7 @@ public class Main extends PApplet {
         strokeWeight(8);
         fill(0, 255, 0);
         stroke(255);
+
         beginShape();
         for(PVector v: heart){
             vertex(v.x, v.y);
@@ -211,12 +239,14 @@ public class Main extends PApplet {
             //tree
             theta = map(mouseX, 0, width, 0, PI / 2);
             translate(width / 2, height / 1);
+            background(255, 255, 204);
             strokeWeight(4);
             tree1(150);
 
         } else if (key == 'c') {
 
             //flower
+            background(51, 204, 255);
             drawFlower();
 
         } else if (key == 'd') {
@@ -226,6 +256,8 @@ public class Main extends PApplet {
 
         } else if(key == 'e'){
 
+            //circle
+            background(255, 255, 204);
             drawsmallercircles(width / 2, height / 2, 300);
             drawCircle(width / 2, height / 2, 275);
             drawsmall(width / 2, height / 2, 250);
@@ -236,10 +268,17 @@ public class Main extends PApplet {
 
             //heart
             heart();
+
+        } else if(key == 'g'){
+
+            circle_again(width/2,height/2,200);
+            circle_again2(width / 4, height / 4, 200);
+
         }
 
     }
 }
 
-    //implement screen with instructions
+    //1.5 hours of class time: implement koch snowflake + add clouds or something
+//2.5 hours of homework:  revise heart animation to make multiple hearts on the same page +  make another circle painting
 
