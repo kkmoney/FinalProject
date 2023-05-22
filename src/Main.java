@@ -1,6 +1,7 @@
 import processing.core.PApplet;
 import processing.core.PVector;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Main extends PApplet {
     private float theta;
@@ -303,6 +304,25 @@ public class Main extends PApplet {
         endShape();
     }
 
+    public void tree2(float len2) { //tree number 2: tree with random angle and length on top middle console and also random branches
+        float theta2 = random(0, PI / 2);
+        line(0, 0, 0, -len2);
+        translate(0, -len2);
+        len2 *= 0.66;
+
+        if (len2 > 2) {
+            int n = (int) (Math.random() * 4) + 1;
+            for (int i = 0; i < n; i++) {
+                float theta3 = random(-PI / 2, PI / 2);
+                pushMatrix();
+                rotate(theta3);
+                tree2(len2);
+                popMatrix();
+            }
+        }
+    }
+
+
     public void instructions(){
         fill(0);
         String line1 = "Here are the instructions to this painting:";
@@ -314,9 +334,10 @@ public class Main extends PApplet {
         String line7 = "press f for an animated heart";
         String line8 = "press g for a recursive circle drawing";
         String line9 = "press h for flower";
+        String line10 = "press i for tree"
 
         text((line1 + "\n" + line2 + "\n" + line3 + "\n" + line4 + "\n" + line5 + "\n" + line6 + "\n" + line7 + "\n" + line8 + "" +
-                        "\n" + line9),
+                        "\n" + line9 + "\n" + line10),
                 width / 3,height / 3);
     }
 
@@ -378,6 +399,12 @@ public class Main extends PApplet {
             //flower2
             flower();
 
+        } else if(key == 'i'){
+
+            translate((float) (width / 2), (float) (height /1));
+            background(255, 102, 102);
+            stroke(51, 153, 255);
+            tree2(200);
         }
 
     }
