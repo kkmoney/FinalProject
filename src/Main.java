@@ -256,6 +256,51 @@ public class Main extends PApplet {
         float y = -r * (13 * cos(a) - (5 * cos(2 * a)) - 2 * cos(3 * a) - cos(4 * a));
         heart.add(new PVector(x, y));
         a += 0.05;
+
+        //source: The Coding Train on Youtube
+    }
+
+    public void flower(){
+        background(204, 204, 204);
+        translate(width / 2, height / 2);
+        line(0, 0, 0, 400);
+        translate(0, -50);
+
+        fill(102, 0, 153);
+        pushMatrix();
+        rotate(PI/6);
+        petal();
+        popMatrix();
+
+        fill(255, 204, 51);
+        pushMatrix();
+        rotate(-PI/6);
+        petal();
+        popMatrix();
+
+        fill(102, 255, 102);
+        pushMatrix();
+        rotate(PI/12);
+        petal();
+        popMatrix();
+
+        fill(51, 204, 255);
+        pushMatrix();
+        rotate(-PI/12);
+        petal();
+        popMatrix();
+
+    }
+
+    public void petal(){
+        beginShape();
+        for(float a = 0; a < TWO_PI; a += 0.01){
+            float r = 100;
+            float x = r * pow(cos(a), 3);
+            float y = r * sin(a);
+            vertex(x, y);
+        }
+        endShape();
     }
 
     public void instructions(){
@@ -268,8 +313,10 @@ public class Main extends PApplet {
         String line6 = "press e for a painting of circles,";
         String line7 = "press f for an animated heart";
         String line8 = "press g for a recursive circle drawing";
+        String line9 = "press h for flower";
 
-        text((line1 + "\n" + line2 + "\n" + line3 + "\n" + line4 + "\n" + line5 + "\n" + line6 + "\n" + line7 + "\n" + line8),
+        text((line1 + "\n" + line2 + "\n" + line3 + "\n" + line4 + "\n" + line5 + "\n" + line6 + "\n" + line7 + "\n" + line8 + "" +
+                        "\n" + line9),
                 width / 3,height / 3);
     }
 
@@ -317,6 +364,7 @@ public class Main extends PApplet {
 
         } else if(key == 'g'){
 
+            //another circle drawing
             background(204, 204, 204);
             circle_again(width/2,height/2,200);
             circle_again2(width / 4, height / 4, 200);
@@ -324,11 +372,16 @@ public class Main extends PApplet {
             circle_again4((float) (width / 4), (float) (height / 1.3), 200);
             circle_again5((float) (width / 1.3), (float) (height / 4), 200);
 
+        } else if(key =='h'){
+
+            //possibly change background like image processing?
+            //flower2
+            flower();
+
         }
 
     }
 }
 
-    //1.5 hours of class time: implement koch snowflake + add clouds or something
-//2.5 hours of homework:  revise heart animation to make multiple hearts on the same page +  make another circle painting
+    //1.5 hours of class time: implement koch snowflake + change heart to have multiple hearts
 

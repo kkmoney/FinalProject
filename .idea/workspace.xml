@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5aba94c1-f67e-4ebb-85ff-b7519ef327ce" name="Changes" comment="5/21 homework: implemented two different circles that calls itself three times. Each recursive call draws a cricle to the right and left of the main circle. Also implemented it in keypressed.">
+    <list default="true" id="5aba94c1-f67e-4ebb-85ff-b7519ef327ce" name="Changes" comment="5/21 homework: implemented three other recursive circles that draw themselves three times. Changed all of the background colors and stoke rgb. Also, added to instructions keypressed.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -114,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684711330667</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="5/21 homework: implemented three other recursive circles that draw themselves three times. Changed all of the background colors and stoke rgb. Also, added to instructions keypressed.">
+      <created>1684714872762</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1684714872762</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -127,7 +134,8 @@
     <MESSAGE value=" I made a new animated heart drawing based on geometry that will paint itself. I then cleaned up all of my keypress functions so that each different key pressed corresponds to a different painting. I also made an instructions page on which keys to press." />
     <MESSAGE value="5/16 in class: Implemented fractal trees from Shiffman’s Nature Of Code book. The tree will shift forms (change branch angle) based on mouseX’s location by a variable called theta. Also, made the tree branches thicker with each recursion call. The tree was able to work as intended on the console." />
     <MESSAGE value="5/21 homework: implemented two different circles that calls itself three times. Each recursive call draws a cricle to the right and left of the main circle. Also implemented it in keypressed." />
-    <option name="LAST_COMMIT_MESSAGE" value="5/21 homework: implemented two different circles that calls itself three times. Each recursive call draws a cricle to the right and left of the main circle. Also implemented it in keypressed." />
+    <MESSAGE value="5/21 homework: implemented three other recursive circles that draw themselves three times. Changed all of the background colors and stoke rgb. Also, added to instructions keypressed." />
+    <option name="LAST_COMMIT_MESSAGE" value="5/21 homework: implemented three other recursive circles that draw themselves three times. Changed all of the background colors and stoke rgb. Also, added to instructions keypressed." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
