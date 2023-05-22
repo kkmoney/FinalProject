@@ -167,6 +167,7 @@ public class Main extends PApplet {
     }
 
     public void circle_again(float x, float y, float radius) {
+        stroke(255, 102, 102);
         ellipse(x, y, radius, radius);
         if(radius > 16) {
             radius *= 0.75f;
@@ -180,6 +181,7 @@ public class Main extends PApplet {
     }
 
     public void circle_again2(float x, float y, float radius) {
+        stroke(51, 204, 255);
         ellipse(x, y, radius, radius);
         if(radius > 16) {
             radius *= 0.75f;
@@ -191,6 +193,49 @@ public class Main extends PApplet {
             circle_again2(x, y, radius/2);
         }
     }
+
+    public void circle_again3(float x, float y, float radius) {
+        stroke(102, 255, 102);
+        ellipse(x, y, radius, radius);
+        if(radius > 16) {
+            radius *= 0.75f;
+            circle_again3((x + radius/2), y, radius/2);
+            circle_again3((x - radius/2), y, radius/2);
+            circle_again3(x, y + radius/2, radius/2);
+            circle_again3(x, y - radius/2, radius/2);
+            circle_again3(x, y , radius/2);
+            circle_again3(x, y, radius/2);
+        }
+    }
+
+    public void circle_again4(float x, float y, float radius) {
+        stroke(255, 255, 0);
+        ellipse(x, y, radius, radius);
+        if(radius > 16) {
+            radius *= 0.75f;
+            circle_again4((x + radius/2), y, radius/2);
+            circle_again4((x - radius/2), y, radius/2);
+            circle_again4(x, y + radius/2, radius/2);
+            circle_again4(x, y - radius/2, radius/2);
+            circle_again4(x, y , radius/2);
+            circle_again4(x, y, radius/2);
+        }
+    }
+
+    public void circle_again5(float x, float y, float radius) {
+        stroke(102, 0, 253);
+        ellipse(x, y, radius, radius);
+        if(radius > 16) {
+            radius *= 0.75f;
+            circle_again5((x + radius/2), y, radius/2);
+            circle_again5((x - radius/2), y, radius/2);
+            circle_again5(x, y + radius/2, radius/2);
+            circle_again5(x, y - radius/2, radius/2);
+            circle_again5(x, y , radius/2);
+            circle_again5(x, y, radius/2);
+        }
+    }
+
 
 
     public void heart(){
@@ -221,9 +266,10 @@ public class Main extends PApplet {
         String line4 = "press c for an animated flower,";
         String line5 =  "press d for a koch snowflake,";
         String line6 = "press e for a painting of circles,";
-        String line7 = "and press f for an animated heart";
+        String line7 = "press f for an animated heart";
+        String line8 = "press g for a recursive circle drawing";
 
-        text((line1 + "\n" + line2 + "\n" + line3 + "\n" + line4 + "\n" + line5 + "\n" + line6 + "\n" + line7),
+        text((line1 + "\n" + line2 + "\n" + line3 + "\n" + line4 + "\n" + line5 + "\n" + line6 + "\n" + line7 + "\n" + line8),
                 width / 3,height / 3);
     }
 
@@ -271,8 +317,12 @@ public class Main extends PApplet {
 
         } else if(key == 'g'){
 
+            background(204, 204, 204);
             circle_again(width/2,height/2,200);
             circle_again2(width / 4, height / 4, 200);
+            circle_again3((float) (width / 1.3), (float) (height / 1.3), 200);
+            circle_again4((float) (width / 4), (float) (height / 1.3), 200);
+            circle_again5((float) (width / 1.3), (float) (height / 4), 200);
 
         }
 
