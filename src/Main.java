@@ -1,4 +1,5 @@
 import processing.core.PApplet;
+import processing.core.PImage;
 import processing.core.PVector;
 import java.util.ArrayList;
 import java.util.Random;
@@ -16,14 +17,16 @@ public class Main extends PApplet {
     private PVector start;
     private PVector end;
     private ArrayList<kochSnowflake> lines;
-
     private float a;
     private float b;
     private float c;
     private float alpha;
     public static Main app;
 
+    private static int k;
+
     ArrayList<PVector> heart = new ArrayList<PVector>();
+
 
     public Main() {
         super();
@@ -36,9 +39,6 @@ public class Main extends PApplet {
 
     public void settings() {
         size(600, 600); //draw the canvas
-    }
-
-    public void setUp() {
     }
 
     public void draw() {
@@ -257,8 +257,27 @@ public class Main extends PApplet {
         float y = -r * (13 * cos(a) - (5 * cos(2 * a)) - 2 * cos(3 * a) - cos(4 * a));
         heart.add(new PVector(x, y));
         a += 0.05;
+        heart2();
 
-        //source: The Coding Train on Youtube
+        //Source: The Coding Train on Youtube
+    }
+
+    public void heart2(){
+        translate(width / 1, height / 1);
+        strokeWeight(4);
+        fill(0, 255, 0);
+        stroke(0,0,255);
+        beginShape();
+        for(PVector v: heart){
+            vertex(v.x, v.y);
+        }
+        endShape();
+
+        float r = 5;
+        float x = r * 7 * pow(sin(a), 3);
+        float y = -r * (13 * cos(a) - (5 * cos(2 * a)) - 2 * cos(3 * a) - cos(4 * a));
+        heart.add(new PVector(x, y));
+        a += 0.00;
     }
 
     public void flower(){
@@ -322,6 +341,46 @@ public class Main extends PApplet {
         }
     }
 
+    private void background(){
+        loadPixels();
+        for (int x = 0; x < width; x++ ) {
+            for (int y = 0; y < height; y++ ) {
+                int loc = x + y * width;
+                if (x % 2 == 0) {
+                    pixels[loc] = color(255);
+                } else if (x % 4 == 0) {
+                    pixels[loc] = color(0, 0, 255);
+                } else if(x % 6 == 0) {
+                    pixels[loc] = color(0, 255, 0);
+                } else{
+                    pixels[loc] = color(0);
+                }
+            }
+        }
+        updatePixels();
+        recursion();
+    }
+
+  public void recursion(){
+     drawBasicCircle(mouseX, mouseY, 400);
+     drawBasicCircle(mouseX, mouseY, 350);
+     drawBasicCircle(mouseX, mouseY, 300);
+     drawBasicCircle(mouseX, mouseY, 250);
+     drawBasicCircle(mouseX, mouseY, 200);
+     drawBasicCircle(mouseX, mouseY, 150);
+     drawBasicCircle(mouseX, mouseY, 100);
+
+      if(mousePressed){
+          fill(random(0,255), random(0,255), random(0,255));
+          ellipse(mouseX, mouseY, 50, 50);
+      }
+  }
+
+
+    public void drawBasicCircle(int x, int y, int radius){
+            ellipse(x,y,radius,radius);
+        }
+
 
     public void instructions(){
         fill(0);
@@ -334,13 +393,12 @@ public class Main extends PApplet {
         String line7 = "press f for an animated heart";
         String line8 = "press g for a recursive circle drawing";
         String line9 = "press h for flower";
-        String line10 = "press i for tree"
+        String line10 = "press i for tree";
 
         text((line1 + "\n" + line2 + "\n" + line3 + "\n" + line4 + "\n" + line5 + "\n" + line6 + "\n" + line7 + "\n" + line8 + "" +
                         "\n" + line9 + "\n" + line10),
                 width / 3,height / 3);
     }
-
     public void keyPressed() {
 
         if (key == 'a') {
@@ -365,8 +423,7 @@ public class Main extends PApplet {
 
         } else if (key == 'd') {
 
-            //how do i call the class kochsnowflake?
-            //make fractal snowflakes (koch) appear
+            background();
 
         } else if(key == 'e'){
 
@@ -395,7 +452,6 @@ public class Main extends PApplet {
 
         } else if(key =='h'){
 
-            //possibly change background like image processing?
             //flower2
             flower();
 
@@ -404,11 +460,9 @@ public class Main extends PApplet {
             translate((float) (width / 2), (float) (height /1));
             background(255, 102, 102);
             stroke(51, 153, 255);
-            tree2(200);
+            tree2(175);
         }
 
     }
 }
-
-    //1.5 hours of class time: implement koch snowflake + change heart to have multiple hearts
 
