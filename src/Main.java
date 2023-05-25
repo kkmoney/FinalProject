@@ -281,7 +281,6 @@ public class Main extends PApplet {
     }
 
     public void flower(){
-        background(204, 204, 204);
         translate(width / 2, height / 2);
         line(0, 0, 0, 400);
         translate(0, -50);
@@ -341,24 +340,43 @@ public class Main extends PApplet {
         }
     }
 
-    private void background(){
+    public void background(){
         loadPixels();
         for (int x = 0; x < width; x++ ) {
             for (int y = 0; y < height; y++ ) {
-                int loc = x + y * width;
+               int loc = x + y * width;
                 if (x % 2 == 0) {
-                    pixels[loc] = color(255);
+                    pixels[loc] = color(255, 255, 204);
                 } else if (x % 4 == 0) {
-                    pixels[loc] = color(0, 0, 255);
+                    pixels[loc] = color(102, 255, 102);
                 } else if(x % 6 == 0) {
-                    pixels[loc] = color(0, 255, 0);
+                    pixels[loc] = color(255,102,102);
                 } else{
                     pixels[loc] = color(0);
                 }
             }
         }
         updatePixels();
+
+    }
+
+    public void h(){
+        background();
         recursion();
+    }
+    public void background2(){
+        loadPixels();
+        for (int x = 0; x < width; x++ ) {
+            for (int y = 0; y < height; y++ ) {
+                int loc = x + y * width;
+                if (x % 2 == 0) {
+                    pixels[loc] = color(0,255,0);
+                } else{
+                    pixels[loc] = color(0,0,255);
+                }
+            }
+        }
+        updatePixels();
     }
 
   public void recursion(){
@@ -388,17 +406,76 @@ public class Main extends PApplet {
         String line2 = "press a for instructions";
         String line3 =  "press b for a recursive tree,";
         String line4 = "press c for an animated flower,";
-        String line5 =  "press d for a koch snowflake,";
+        String line5 =  "press d for a animated circle,";
         String line6 = "press e for a painting of circles,";
         String line7 = "press f for an animated heart";
-        String line8 = "press g for a recursive circle drawing";
+        String line8 = "press g for saturation";
         String line9 = "press h for flower";
         String line10 = "press i for tree";
+        String line11 = "press j for gradiant";
+        String line12 = "press k for hue";
+        String line13 = "press l for another recursive drawing";
 
         text((line1 + "\n" + line2 + "\n" + line3 + "\n" + line4 + "\n" + line5 + "\n" + line6 + "\n" + line7 + "\n" + line8 + "" +
-                        "\n" + line9 + "\n" + line10),
+                        "\n" + line9 + "\n" + line10 + "\n" + line11 + "\n" + line12 + "\n" + line13),
                 width / 3,height / 3);
     }
+
+    public void drawGradient(float x, float y){
+
+        ellipseMode(RADIUS); //modifies location of ellipse
+        int dim = width / 2;
+        int radius = dim / 2;
+        float h = random(0, 360);
+        for (int r = radius; r > 0; r--) {
+            fill(h, 100, 100);
+            ellipse(x, y, r, r);
+            h = (h + 1) % 360; //shift colors
+            }
+        }
+
+        public void hue(){
+            colorMode(HSB, height, height, height);
+            background(0);
+            //hue is color transmitted from object; cursor moves affects hue
+            int width = 20;
+            int bar = -1;
+
+            int hue = mouseX / width;
+            if(hue != bar){
+                int barX = hue * width;
+                fill(mouseY, height, height);
+                rect(barX, 0, width, height);
+                bar = hue;
+            }
+        }
+
+        public void saturation() {
+        //strength of color in hue
+            colorMode(HSB, width, height, 100); //hsb describes saturation and brightness, different to rgb
+            noStroke();
+
+            int width = 20;
+            int bar = -1;
+            int secondBar = mouseX / width;
+            if (secondBar != bar) {
+                int barX = secondBar * width;
+                fill(barX, mouseY, 66);
+                rect(barX, 0, width, height);
+                bar = secondBar;
+            }
+        }
+
+
+        public void drawGradiantCircles(){
+            background(100,0,0);
+            stroke(0,0,255);
+            int dim = width / 2;
+
+            for (int k = 0; k <= width; k+= dim) {
+                drawGradient(k, height / 2);
+            }
+        }
     public void keyPressed() {
 
         if (key == 'a') {
@@ -423,7 +500,8 @@ public class Main extends PApplet {
 
         } else if (key == 'd') {
 
-            background();
+            //drawing + background
+            h();
 
         } else if(key == 'e'){
 
@@ -442,6 +520,39 @@ public class Main extends PApplet {
 
         } else if(key == 'g'){
 
+            //saturation
+            saturation();
+
+
+        } else if(key =='h'){
+
+            //flower2
+
+            stroke(0,0,0);
+            line(0, 0, 0, 400);
+            background2();
+            flower();
+
+        } else if(key == 'i'){
+
+            //fast tree
+            translate((float) (width / 2), (float) (height /1));
+            background(255, 102, 102);
+            stroke(51, 153, 255);
+            tree2(175);
+
+        } else if(key == 'j'){
+
+            //draw gradiant circles
+            drawGradiantCircles();
+
+        } else if(key == 'k'){
+
+            //hue
+            hue();
+
+        } else if(key =='l'){
+
             //another circle drawing
             background(204, 204, 204);
             circle_again(width/2,height/2,200);
@@ -450,17 +561,6 @@ public class Main extends PApplet {
             circle_again4((float) (width / 4), (float) (height / 1.3), 200);
             circle_again5((float) (width / 1.3), (float) (height / 4), 200);
 
-        } else if(key =='h'){
-
-            //flower2
-            flower();
-
-        } else if(key == 'i'){
-
-            translate((float) (width / 2), (float) (height /1));
-            background(255, 102, 102);
-            stroke(51, 153, 255);
-            tree2(175);
         }
 
     }

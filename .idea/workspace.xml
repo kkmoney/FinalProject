@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5aba94c1-f67e-4ebb-85ff-b7519ef327ce" name="Changes" comment="5/22: I made another tree that has a random value that changes. There are three main tree shapes and they are rotated between each one. I also added that to keypressed.">
+    <list default="true" id="5aba94c1-f67e-4ebb-85ff-b7519ef327ce" name="Changes" comment="5/24 (2 hours): I made a basic circle and then changed that circle to move based on where the curser was. I made multiple circles inbedded each other that moves on the console based on where the mouse is. I also made a method where everytime the mouse is pressed, the circle would have a random color. I also made the background something similar to fancybackground in the image processing project.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -135,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684788563063</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="5/24 (2 hours): I made a basic circle and then changed that circle to move based on where the curser was. I made multiple circles inbedded each other that moves on the console based on where the mouse is. I also made a method where everytime the mouse is pressed, the circle would have a random color. I also made the background something similar to fancybackground in the image processing project.">
+      <created>1684974738174</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1684974738174</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -162,7 +169,8 @@
     <MESSAGE value="5/21 homework: implemented three other recursive circles that draw themselves three times. Changed all of the background colors and stoke rgb. Also, added to instructions keypressed." />
     <MESSAGE value="5/21 (1.5 hour homework): I made a flower fractal that draws on itself recursively. I added that to my keypressed and instructions." />
     <MESSAGE value="5/22: I made another tree that has a random value that changes. There are three main tree shapes and they are rotated between each one. I also added that to keypressed." />
-    <option name="LAST_COMMIT_MESSAGE" value="5/22: I made another tree that has a random value that changes. There are three main tree shapes and they are rotated between each one. I also added that to keypressed." />
+    <MESSAGE value="5/24 (2 hours): I made a basic circle and then changed that circle to move based on where the curser was. I made multiple circles inbedded each other that moves on the console based on where the mouse is. I also made a method where everytime the mouse is pressed, the circle would have a random color. I also made the background something similar to fancybackground in the image processing project." />
+    <option name="LAST_COMMIT_MESSAGE" value="5/24 (2 hours): I made a basic circle and then changed that circle to move based on where the curser was. I made multiple circles inbedded each other that moves on the console based on where the mouse is. I also made a method where everytime the mouse is pressed, the circle would have a random color. I also made the background something similar to fancybackground in the image processing project." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
