@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5aba94c1-f67e-4ebb-85ff-b7519ef327ce" name="Changes" comment="5/24 (2 hours): I made a basic circle and then changed that circle to move based on where the curser was. I made multiple circles inbedded each other that moves on the console based on where the mouse is. I also made a method where everytime the mouse is pressed, the circle would have a random color. I also made the background something similar to fancybackground in the image processing project.">
+    <list default="true" id="5aba94c1-f67e-4ebb-85ff-b7519ef327ce" name="Changes" comment="5/25: I made two different hues and saturation patterns in my code. The hue transmits light based on the color and the saturation changes the strength of the color.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -32,16 +32,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -142,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684974738174</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="5/25: I made two different hues and saturation patterns in my code. The hue transmits light based on the color and the saturation changes the strength of the color.">
+      <created>1685036161736</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1685036161736</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -170,7 +177,8 @@
     <MESSAGE value="5/21 (1.5 hour homework): I made a flower fractal that draws on itself recursively. I added that to my keypressed and instructions." />
     <MESSAGE value="5/22: I made another tree that has a random value that changes. There are three main tree shapes and they are rotated between each one. I also added that to keypressed." />
     <MESSAGE value="5/24 (2 hours): I made a basic circle and then changed that circle to move based on where the curser was. I made multiple circles inbedded each other that moves on the console based on where the mouse is. I also made a method where everytime the mouse is pressed, the circle would have a random color. I also made the background something similar to fancybackground in the image processing project." />
-    <option name="LAST_COMMIT_MESSAGE" value="5/24 (2 hours): I made a basic circle and then changed that circle to move based on where the curser was. I made multiple circles inbedded each other that moves on the console based on where the mouse is. I also made a method where everytime the mouse is pressed, the circle would have a random color. I also made the background something similar to fancybackground in the image processing project." />
+    <MESSAGE value="5/25: I made two different hues and saturation patterns in my code. The hue transmits light based on the color and the saturation changes the strength of the color." />
+    <option name="LAST_COMMIT_MESSAGE" value="5/25: I made two different hues and saturation patterns in my code. The hue transmits light based on the color and the saturation changes the strength of the color." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

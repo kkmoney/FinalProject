@@ -404,7 +404,7 @@ public class Main extends PApplet {
         fill(0);
         String line1 = "Here are the instructions to this painting:";
         String line2 = "press a for instructions";
-        String line3 =  "press b for a recursive tree,";
+        String line3 =  "press b for gradiant";
         String line4 = "press c for an animated flower,";
         String line5 =  "press d for a animated circle,";
         String line6 = "press e for a painting of circles,";
@@ -412,7 +412,7 @@ public class Main extends PApplet {
         String line8 = "press g for saturation";
         String line9 = "press h for flower";
         String line10 = "press i for tree";
-        String line11 = "press j for gradiant";
+        String line11 = "press j for a recursive tree";
         String line12 = "press k for hue";
         String line13 = "press l for another recursive drawing";
 
@@ -485,12 +485,8 @@ public class Main extends PApplet {
 
         } else if (key == 'b') {
 
-            //tree
-            theta = map(mouseX, 0, width, 0, PI / 2);
-            translate(width / 2, height / 1);
-            background(255, 255, 204);
-            strokeWeight(4);
-            tree1(150);
+            //draw gradiant circles
+            drawGradiantCircles();
 
         } else if (key == 'c') {
 
@@ -543,8 +539,12 @@ public class Main extends PApplet {
 
         } else if(key == 'j'){
 
-            //draw gradiant circles
-            drawGradiantCircles();
+            //tree
+            theta = map(mouseX, 0, width, 0, PI / 2);
+            translate(width / 2, height / 1);
+            background(255, 255, 204);
+            strokeWeight(4);
+            tree1(150);
 
         } else if(key == 'k'){
 
